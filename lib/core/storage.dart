@@ -1,0 +1,1 @@
+// hafizaya kalıcı olarak yazı/okuma işlemlerimizi burada yapacağız
