@@ -18,24 +18,39 @@ class BottomMenu extends StatelessWidget {
             onPressed: () {
               context.go("/home");
             },
-            icon: Icon(
-              CupertinoIcons.home,
+            icon: Column(
+              children: [
+                Icon(
+                  CupertinoIcons.home,
+                ),
+                Text('Home')
+              ],
             ),
           ),
           IconButton(
             onPressed: () {
               context.go("/search");
             },
-            icon: Icon(
-              CupertinoIcons.search,
+            icon: Column(
+              children: [
+                Icon(
+                  CupertinoIcons.search,
+                ),
+                Text('Discover')
+              ],
             ),
           ),
           IconButton(
             onPressed: () {
               context.go("/profile");
             },
-            icon: Icon(
-              CupertinoIcons.person,
+            icon: Column(
+              children: [
+                Icon(
+                  CupertinoIcons.person,
+                ),
+                Text('Profile')
+              ],
             ),
           ),
         ],
