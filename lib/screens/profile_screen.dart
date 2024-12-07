@@ -56,17 +56,35 @@ class ProfileScreen extends StatelessWidget {
                 color: ikincilRenkim,
               ),
             ),
+            const SizedBox(height: 20),
+            const Text(
+              "Okul Numarası: 2320161071",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: ikincilRenkim,
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Bölüm: Bilgisayar Programcılığı",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: ikincilRenkim,
+              ),
+            ),
             const SizedBox(height: 30),
             const ProfileInfoRow(
               icon: Icons.email,
               label: "E-mail",
-              value: "engin@mailexample.com",
+              value: "ozturk.engin.0811@gmail.com",
             ),
             const SizedBox(height: 20),
             const ProfileInfoRow(
               icon: Icons.phone,
               label: "Phone",
-              value: "+90 123 456 789",
+              value: "+90 534 910 1524",
             ),
           ],
         ),
