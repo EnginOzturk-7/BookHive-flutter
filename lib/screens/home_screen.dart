@@ -142,7 +142,7 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: ikincilRenkim.withOpacity(0.1),
         border: Border.all(color:Colors.black),
       ),
       child: Row(
@@ -161,21 +161,24 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
+                    color: ikincilRenkim,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: 24,
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 20),
                 Text(
                   author,
                   style: const TextStyle(
+                    color: ikincilRenkim,
                     fontSize: 16,
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 20),
                 Text(
                   genre,
                   style: const TextStyle(
+                    color: ikincilRenkim,
                     fontSize: 16,
                   ),
                 ),
