@@ -4,8 +4,7 @@
 
 ## Proje Hakkında
 
-[Kitapseverlerin web üzerinden kitap okuyabilecekleri, önerilerini paylaşabileceği, 
-kitap kulüplerine katılabileceği ve okuma hedeflerini takip edebileceği sosyal bir platform.]
+[Kitapseverlerin web üzerinden yeni kitap bulabilecekleri, kendi kütüphanelerine ekleyebilecekleri, önerilerini paylaşabileceği, kitap kulüplerine katılabileceği ve okuma hedeflerini takip edebileceği sosyal bir platform.]
 
 
 
@@ -24,11 +23,11 @@ kitap kulüplerine katılabileceği ve okuma hedeflerini takip edebileceği sosy
 
 ## Özellikler
 
-- [Ana özellik 1]
+- [Kitap bilgileri ]
 
-- [Ana özellik 2]
+- [Arama çubuğu ]
 
-- [Ana özellik 3]
+- [Profil ]
 
   
 
