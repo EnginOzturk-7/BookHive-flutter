@@ -1,5 +1,6 @@
 //uygulamada sayfaları ve navigasyon işlemlerini burada tanımlayacağız
 
+// ignore: unused_import
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/loading_screen.dart';
