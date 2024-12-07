@@ -117,7 +117,10 @@ lib/
 
 ## Ekran Görüntüleri
 
-[Uygulama ekran görüntüleri buraya eklenecek]
+![alt text](yükleme.png) 
+![alt text](ev.png)
+![alt text](keşfet.png)
+![alt text](profil.png)
 
   
 
