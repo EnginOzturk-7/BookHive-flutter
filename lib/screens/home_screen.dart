@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/core/storage.dart';
 import 'package:flutter_app/core/themes.dart';
 
 import '../widgets/bottom_menu.dart';
@@ -47,22 +48,67 @@ class HomeScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 10),
 
-              Center(
-                child: const Text(
+              const Center(
+                child: Text(
                   'Popular Genres',
                   style: TextStyle(
+                    color: ikincilRenkim,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              Column(
                 children: [
-                  GenreTags('Mystery'),
-                  GenreTags('Romance'),
-                  GenreTags('Fantasy'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GenreTags('Mystery'),
+                      GenreTags('Romance'),
+                      GenreTags('Fantasy'),
+                      GenreTags('Science Fiction'),
+                      GenreTags('Drama'),
+                      GenreTags('Fiction'),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GenreTags('Philosophy'),
+                      GenreTags('Classic'),
+                      GenreTags('Psychology'),
+                      GenreTags('Adventure'),
+                      GenreTags('Political'),
+                      GenreTags("Dystopian"),
+                    ]
+                  ),
+                  const SizedBox(height:40),
+                  const Text(
+                    'Popular Books',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: ikincilRenkim,
+                    ),
+                  ),
+                  const SizedBox(height:15),                  
+                  Column(
+                    children: books.map((book) {
+                    return Column(
+                      children: [
+                        BookContainers(
+                          book['title']!,
+                          book['author']!,
+                          book['genre']!,
+                          book['image']!,
+                        ),
+                      const SizedBox(height: 10),
+                      ],
+                      );
+                    }).toList(),
+                  ),
                 ],
               ),
             ],
@@ -91,5 +137,53 @@ class HomeScreen extends StatelessWidget {
       textAlign: TextAlign.center,
     ),
   );
-}
+  }
+  Widget BookContainers(String title, String author, String genre,String image) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color:Colors.black),
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            image,
+            width: 100,
+            height: 160,
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  author,
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  genre,
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
