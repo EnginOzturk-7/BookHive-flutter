@@ -121,8 +121,10 @@ lib/
 ![alt text](ev.png)
 ![alt text](keşfet.png)
 ![alt text](profil.png)
+![alt text](ayarlar.png)
+![alt text](giriş_yap.png)
+![alt text](kayıt_ol.png)
 
-  
 
 ## Projeye Katkı Sağlama
 
