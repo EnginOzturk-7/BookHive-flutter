@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/core/storage.dart';
 import 'package:flutter_app/core/themes.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/bottom_menu.dart';
 import '../widgets/widgets.dart';
@@ -14,10 +15,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaplanRenkim,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       // AppBar
       appBar: AppBar(
-        backgroundColor: ikincilRenkim,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         leading: Padding(
           padding: const EdgeInsets.all(8.0), // Logoya biraz boşluk bırakmak için padding ekledik
           child: Image.asset(
@@ -36,6 +37,14 @@ class HomeScreen extends StatelessWidget {
             ),
           )
         ),
+        actions: [
+          IconButton(
+            icon: Icon(CupertinoIcons.moon, color: Theme.of(context).colorScheme.onPrimary,),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
       ),
 
       // Drawer (Yan Menü)(kaldırdım)(Bir işlev görmüyordu ve çok göze batıyordu)
