@@ -26,12 +26,12 @@ class HomeScreen extends StatelessWidget {
             fit: BoxFit.contain,
           ),
         ),
-        title: const Align(
+        title: Align(
           alignment: Alignment.center,
           child: Text(
             'BookHive',
             style: TextStyle(
-                color: Color.fromARGB(228, 255, 217, 0),
+                color: Theme.of(context).colorScheme.onSecondary,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
             ),
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon, color: Theme.of(context).colorScheme.onPrimary,),
+            icon: Icon(CupertinoIcons.moon, color: Theme.of(context).colorScheme.onSecondary,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -58,11 +58,11 @@ class HomeScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 10),
 
-              const Center(
+              Center(
                 child: Text(
                   'Popular Genres',
                   style: TextStyle(
-                    color: ikincilRenkim,
+                    color: Theme.of(context).colorScheme.onPrimary,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -95,12 +95,12 @@ class HomeScreen extends StatelessWidget {
                     ]
                   ),
                   const SizedBox(height:40),
-                  const Text(
+                  Text(
                     'Popular Books',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: ikincilRenkim,
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                   const SizedBox(height:15),                  
@@ -109,10 +109,10 @@ class HomeScreen extends StatelessWidget {
                     return Column(
                       children: [
                         BookContainers(
-                          book['title']!,
-                          book['author']!,
-                          book['genre']!,
-                          book['image']!,
+                          title: book['title']!,
+                          author: book['author']!,
+                          genre: book['genre']!,
+                          image: book['image']!,
                         ),
                       const SizedBox(height: 10),
                       ],
