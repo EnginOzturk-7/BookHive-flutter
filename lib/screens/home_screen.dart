@@ -41,7 +41,9 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon, color: Theme.of(context).colorScheme.onSecondary,),
+            icon: Icon(context.read<ThemeProvider>().isDark 
+              ? CupertinoIcons.sun_max 
+              : CupertinoIcons.moon, color: Theme.of(context).colorScheme.onSecondary,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
