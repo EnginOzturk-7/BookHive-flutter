@@ -20,8 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Enter Your Information"),
-          // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-          // margin: EdgeInsets.all(20),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
           showCloseIcon: true,
@@ -32,8 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text("Password has to be 8 characters at minimum."),
-            // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-            // margin: EdgeInsets.all(20),
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.red,
             showCloseIcon: true,
@@ -48,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
         child: SizedBox(
           width: 300,
@@ -59,11 +55,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: epostaYonetici,
                 decoration: InputDecoration(
                   hintText: "E-Mail",
+                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                  fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                  filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: Icon(Icons.email, color: Theme.of(context).colorScheme.onPrimary),
                 ),
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 16),
               TextFormField(
@@ -71,11 +71,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: sifreYonetici,
                 decoration: InputDecoration(
                   hintText: "Password",
+                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                  fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                  filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.lock, color: Theme.of(context).colorScheme.onPrimary),
                 ),
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 24),
               ElevatedButton(
@@ -86,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text("Log in", style: TextStyle(fontSize: 16)),
+                child: Text("Log in", style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 16)),
               ),
               SizedBox(height: 12),
               ElevatedButton(
@@ -99,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text("Register", style: TextStyle(fontSize: 16)),
+                child: Text("Register", style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 16)),
               ),
               SizedBox(height: 24),
               OutlinedButton.icon(
@@ -111,8 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 icon: Image.asset('assets/icons/google_icon.png', height: 24),
-                label: Text("Enter with Google",
-                    style: TextStyle(fontSize: 16)),
+                label: Text("Enter with Google", style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onPrimary)),
               ),
               SizedBox(height: 12),
               OutlinedButton.icon(
@@ -124,8 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 icon: Image.asset('assets/icons/apple_icon.png', height: 24),
-                label: Text("Enter with Apple ID ",
-                    style: TextStyle(fontSize: 16)),
+                label: Text("Enter with Apple ID ", style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onPrimary)),
               ),
             ],
           ),
