@@ -126,6 +126,12 @@ lib/
 ![alt text](kayıt_ol.png)
 
 
+
+## Demo Videosu
+
+<video controls src="Demo_Video.mp4" title="Title"></video>
+
+
 ## Projeye Katkı Sağlama
 
 1. Projeyi forklayın
