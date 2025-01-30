@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: unused_import
 import '../core/themes.dart';
 
 class GenreTags extends StatelessWidget {

@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
@@ -10,9 +14,9 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaplanRenkim,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: ikincilRenkim,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
@@ -20,37 +24,45 @@ class SearchScreen extends StatelessWidget {
             fit: BoxFit.contain,
           ),
         ),
-        title: const Align(
+        title: Align(
           alignment: Alignment.center,
           child: Text(
             'BookHive',
             style: TextStyle(
-              color: Color.fromARGB(228, 255, 217, 0),
+              color: Theme.of(context).colorScheme.onSecondary,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(CupertinoIcons.moon, color: Theme.of(context).colorScheme.onSecondary,),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Discover",
               style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: ikincilRenkim,
+              color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               "Search for content and discover new books.",
               style: TextStyle(
                 fontSize: 16,
-                  color: ikincilRenkim,
+                  color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             const SizedBox(height: 20),
@@ -58,27 +70,27 @@ class SearchScreen extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 hintText: "Search for books, authors or genres...",
-                hintStyle: TextStyle(color: ikincilRenkim),
+                hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
                 filled: true,
-                fillColor: ikincilRenkim.withOpacity(0.1),
+                fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide.none,
                 ),
                 prefixIcon: Icon(
                   Icons.search,
-                  color: ikincilRenkim,
+                  color: Theme.of(context).colorScheme.onPrimary,
                 ),
               ),
-              style: const TextStyle(color: ikincilRenkim),
+              style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               "Most Searched Genres:",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: ikincilRenkim,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             const SizedBox(height: 10),
