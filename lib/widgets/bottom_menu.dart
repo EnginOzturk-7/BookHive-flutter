@@ -56,6 +56,19 @@ class BottomMenu extends StatelessWidget {
               ],
             ),
           ),
+          IconButton(
+            onPressed: () {
+              context.go("/settings");
+            },
+            icon: Column(
+              children: [
+                Icon(
+                  CupertinoIcons.settings,
+                ),
+                Text('Settings')
+              ],
+            ),
+          ),
         ],
       ),
     );
