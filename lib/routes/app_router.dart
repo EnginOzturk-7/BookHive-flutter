@@ -2,12 +2,14 @@
 
 // ignore: unused_import
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/settings_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/login_screen.dart';
 import '../screens/profile_screen.dart';
+import '../screens/register_screen.dart';
 import '../screens/search_screeen.dart';
+import '../screens/settings_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
@@ -32,6 +34,14 @@ final router = GoRouter(
     GoRoute(
       path: '/settings',
       builder: (context, state) => const SettingsScreen(),
+    ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/register',
+      builder: (context, state) => const RegisterScreen(),
     ),
   ],
 );

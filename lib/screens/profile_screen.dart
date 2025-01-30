@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 // ignore: unused_import
@@ -104,7 +105,9 @@ class ProfileScreen extends StatelessWidget {
               width: double.infinity,
               height: 45,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go("/login");
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.error,
                   foregroundColor: Theme.of(context).colorScheme.onError,
