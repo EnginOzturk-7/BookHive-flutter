@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+// ignore: unused_import
 import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
 
@@ -11,9 +14,9 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaplanRenkim,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: ikincilRenkim,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
@@ -21,17 +24,25 @@ class ProfileScreen extends StatelessWidget {
             fit: BoxFit.contain,
           ),
         ),
-        title: const Align(
+        title: Align(
           alignment: Alignment.center,
           child: Text(
             'BookHive',
             style: TextStyle(
-              color: Color.fromARGB(228, 255, 217, 0),
+              color:Theme.of(context).colorScheme.onSecondary,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(CupertinoIcons.moon, color: Theme.of(context).colorScheme.onSecondary,),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -48,30 +59,30 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               "Engin Öztürk", // Ad ve Soyad
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
-                color: ikincilRenkim,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               "Okul Numarası: 2320161071",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: ikincilRenkim,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               "Bölüm: Bilgisayar Programcılığı",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: ikincilRenkim,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             const SizedBox(height: 30),
@@ -113,16 +124,16 @@ class ProfileInfoRow extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: ikincilRenkim,
+          color: Theme.of(context).colorScheme.onPrimary,
           size: 32,
         ),
         const SizedBox(width: 16),
         Expanded(
           child: Text(
             "$label: $value",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 24,
-              color: ikincilRenkim,
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
         ),
