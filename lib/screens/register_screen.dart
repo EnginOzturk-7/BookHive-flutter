@@ -14,7 +14,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
         child: SizedBox(
           width: 300,
@@ -24,56 +24,72 @@ class _RegisterScreenState extends State<RegisterScreen> {
               TextField(
                 decoration: InputDecoration(
                   hintText: "Name Surname",
+                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                  fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                  filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: Icon(Icons.person, color: Theme.of(context).colorScheme.onPrimary),
                 ),
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 16),
               TextField(
                 decoration: InputDecoration(
                   hintText: "E-Mail",
+                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                  fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                  filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: Icon(Icons.email, color: Theme.of(context).colorScheme.onPrimary),
                 ),
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 16),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Password",
+                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                  fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                  filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.lock, color: Theme.of(context).colorScheme.onPrimary),
                 ),
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 16),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Repeat Password",
+                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                  fillColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.1),
+                  filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  prefixIcon: Icon(Icons.lock_outline),
+                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.onPrimary),
                 ),
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 24),
-              FilledButton(
+              OutlinedButton(
                 onPressed: () {
                   context.go("/home");
                 },
-                style: FilledButton.styleFrom(
+                style: OutlinedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text("Register", style: TextStyle(fontSize: 16)),
+                child: Text("Register", style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onPrimary)),
               ),
               SizedBox(height: 12),
               OutlinedButton(
@@ -86,7 +102,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text("Log in", style: TextStyle(fontSize: 16)),
+                child: Text("Log in", style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onPrimary)),
               ),
             ],
           ),

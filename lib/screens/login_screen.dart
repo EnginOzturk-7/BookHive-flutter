@@ -82,9 +82,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               ),
               SizedBox(height: 24),
-              ElevatedButton(
+              OutlinedButton(
                 onPressed: girisYap,
-                style: ElevatedButton.styleFrom(
+                style: OutlinedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -93,11 +93,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text("Log in", style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 16)),
               ),
               SizedBox(height: 12),
-              ElevatedButton(
+              OutlinedButton(
                 onPressed: () {
                   context.pushReplacement("/register");
                 },
-                style: ElevatedButton.styleFrom(
+                style: OutlinedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
