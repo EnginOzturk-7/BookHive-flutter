@@ -129,7 +129,7 @@ lib/
 
 ## Demo Videosu
 
-<video controls src="Demo_Video.mp4" title="Title"></video>
+[<video controls src="Demo_Video.mp4" title="Title"></video>](https://github.com/user-attachments/assets/98e13f97-8e1f-4759-aae9-efe674822885)
 
 
 ## Projeye Katkı Sağlama
