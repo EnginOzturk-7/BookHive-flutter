@@ -99,6 +99,27 @@ class ProfileScreen extends StatelessWidget {
               label: "Phone",
               value: "+90 534 910 1524",
             ),
+            const Spacer(),
+            SizedBox(
+              width: double.infinity,
+              height: 45,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.error,
+                  foregroundColor: Theme.of(context).colorScheme.onError,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start, // İçeriği sola yaslar
+                  children: [
+                    const Icon(Icons.logout),
+                    const SizedBox(width: 8), // İkon ile metin arasında boşluk
+                    const Text("Hesaptan Çıkış Yap"),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 60)
           ],
         ),
       ),
